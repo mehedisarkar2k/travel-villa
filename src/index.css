@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+
+.nav-link {
+  @apply text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md font-medium;
+}
+.collapse-nav-link {
+  @apply text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md font-medium;
+}
+
+@tailwind utilities;
+
+.my-container {
+  @apply w-full px-4 mx-auto;
+}
+
+@media (min-width: 576px) {
+  .my-container {
+    max-width: 540px !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .my-container {
+    max-width: 720px !important;
+  }
+}
+@media (min-width: 992px) {
+  .my-container {
+    max-width: 970px !important;
+  }
+}
+@media (min-width: 1200px) {
+  .my-container {
+    max-width: 1170px !important;
+  }
+}
+@media (min-width: 1400px) {
+  .my-container {
+    max-width: 1320px !important;
+  }
+}
