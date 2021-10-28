@@ -19,7 +19,7 @@ function Nav() {
               <div className="ml-auto hidden md:block">
                 <div className="ml-10 flex items-baseline space-x-4">
                   <NavLink
-                    activeClassName="text-orange bg-gray-700"
+                    activeClassName="text-lightBlue bg-gray-700"
                     to="/home"
                     className="text-white nav-link"
                   >
@@ -27,7 +27,7 @@ function Nav() {
                   </NavLink>
 
                   <NavLink
-                    activeClassName="text-orange bg-gray-700"
+                    activeClassName="text-lightBlue bg-gray-700"
                     to="/cruises"
                     className="nav-link"
                   >
@@ -35,7 +35,7 @@ function Nav() {
                   </NavLink>
 
                   <NavLink
-                    activeClassName="text-orange bg-gray-700"
+                    activeClassName="text-lightBlue bg-gray-700"
                     to="/myCruises"
                     className="nav-link"
                   >
@@ -43,7 +43,7 @@ function Nav() {
                   </NavLink>
 
                   <NavLink
-                    activeClassName="text-orange bg-gray-700"
+                    activeClassName="text-lightBlue bg-gray-700"
                     to="/manageCruises"
                     className="nav-link"
                   >
@@ -51,7 +51,7 @@ function Nav() {
                   </NavLink>
 
                   <NavLink
-                    activeClassName="text-orange bg-gray-700"
+                    activeClassName="text-lightBlue bg-gray-700"
                     to="/addCruises"
                     className="nav-link"
                   >
@@ -59,7 +59,7 @@ function Nav() {
                   </NavLink>
 
                   <NavLink
-                    activeClassName="text-orange bg-gray-700"
+                    activeClassName="text-lightBlue bg-gray-700"
                     to="/aboutUs"
                     className="nav-link"
                   >
@@ -67,7 +67,7 @@ function Nav() {
                   </NavLink>
 
                   <NavLink
-                    activeClassName="text-orange bg-gray-700"
+                    activeClassName="text-lightBlue bg-gray-700"
                     to="/login"
                     className="bg-orange nav-link"
                   >
@@ -139,7 +139,7 @@ function Nav() {
                 className="px-2 pt-2 pb-3 space-y-1 sm:px-3"
               >
                 <NavLink
-                  activeClassName="text-orange bg-gray-700"
+                  activeClassName="text-lightBlue bg-gray-700"
                   to="/home"
                   className="collapse-nav-link"
                 >
@@ -147,7 +147,7 @@ function Nav() {
                 </NavLink>
 
                 <NavLink
-                  activeClassName="text-orange bg-gray-700"
+                  activeClassName="text-lightBlue bg-gray-700"
                   to="/cruises"
                   className="collapse-nav-link text-white"
                 >
@@ -155,7 +155,7 @@ function Nav() {
                 </NavLink>
 
                 <NavLink
-                  activeClassName="text-orange bg-gray-700"
+                  activeClassName="text-lightBlue bg-gray-700"
                   to="/myCruises"
                   className="collapse-nav-link"
                 >
@@ -163,7 +163,7 @@ function Nav() {
                 </NavLink>
 
                 <NavLink
-                  activeClassName="text-orange bg-gray-700"
+                  activeClassName="text-lightBlue bg-gray-700"
                   to="/manageCruises"
                   className="collapse-nav-link"
                 >
@@ -171,7 +171,7 @@ function Nav() {
                 </NavLink>
 
                 <NavLink
-                  activeClassName="text-orange bg-gray-700"
+                  activeClassName="text-lightBlue bg-gray-700"
                   to="/addCruises"
                   className="collapse-nav-link"
                 >
@@ -179,7 +179,7 @@ function Nav() {
                 </NavLink>
 
                 <NavLink
-                  activeClassName="text-orange bg-gray-700"
+                  activeClassName="text-lightBlue bg-gray-700"
                   to="/aboutUs"
                   className="collapse-nav-link"
                 >
@@ -187,7 +187,7 @@ function Nav() {
                 </NavLink>
 
                 <NavLink
-                  activeClassName="text-orange bg-gray-700"
+                  activeClassName="text-lightBlue bg-gray-700"
                   to="/login"
                   className="collapse-nav-link"
                 >

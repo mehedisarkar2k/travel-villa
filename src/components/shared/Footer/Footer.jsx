@@ -79,15 +79,15 @@ const Footer = () => {
             <h3 className="text-3xl mb-2">Newsletter</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
 
-            <div className="flex space-x-1 items-center rounded-lg p-2 border-2 border-orange mt-4">
-              <FaEnvelope className="text-lg text-orange" />
+            <div className="flex space-x-1 items-center rounded-lg p-2 border-2 border-lightBlue mt-4">
+              <FaEnvelope className="text-lg text-lightBlue" />
               <input
                 className="bg-transparent w-full focus:outline-none border-none focus:ring-0 px-2"
                 type="text"
                 placeholder="Your Email:"
               />
             </div>
-            <button className="bg-orange text-gray-800 font-bold outline-none border-2 border-orange rounded-lg px-6 py-2 mt-2 w-full shadow-lg hover:text-white">
+            <button className="bg-darkBlue text-gray-800 font-bold outline-none border-2 border-darkBlue rounded-lg px-6 py-2 mt-2 w-full shadow-lg hover:text-gray-700 hover:bg-lightBlue hover:border-lightBlue">
               Subscribe
             </button>
           </div>
@@ -104,12 +104,15 @@ const Footer = () => {
             Hasan Sarkar
           </p>
 
-          <div className="flex items-center text-xl space-x-4 text-orange">
-            <FaCcVisa />
-            <BsPaypal />
-            <FaCcMastercard />
-            <FaCcJcb />
-            <FaCcDiscover />
+          <div className="flex flex-col items-center text-xl text-darkBlue">
+            <h2 className="text-lg mb-1">We Accepted</h2>
+            <div className="flex items-center space-x-4">
+              <FaCcVisa />
+              <BsPaypal />
+              <FaCcMastercard />
+              <FaCcJcb />
+              <FaCcDiscover />
+            </div>
           </div>
         </div>
       </div>

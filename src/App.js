@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
+import Home from "./components/pages/Home/Home";
 import Footer from "./components/shared/Footer/Footer";
 import Header from "./components/shared/Header/Header";
 
@@ -9,7 +10,12 @@ function App() {
       <div className="min-h-screen flex flex-col w-full">
         <Header />
         <Switch>
-          <Route></Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/home">
+            <Home />
+          </Route>
         </Switch>
 
         <div className="mt-auto">
