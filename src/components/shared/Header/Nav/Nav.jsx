@@ -28,7 +28,7 @@ function Nav() {
 
                   <NavLink
                     activeClassName="text-lightBlue bg-gray-700"
-                    to="/cruises"
+                    to="/allPackage"
                     className="nav-link"
                   >
                     All Packages
@@ -44,7 +44,7 @@ function Nav() {
 
                   <NavLink
                     activeClassName="text-lightBlue bg-gray-700"
-                    to="/manageCruises"
+                    to="/manageOrders"
                     className="nav-link"
                   >
                     Manage Order
@@ -52,7 +52,7 @@ function Nav() {
 
                   <NavLink
                     activeClassName="text-lightBlue bg-gray-700"
-                    to="/addCruises"
+                    to="/addPackage"
                     className="nav-link"
                   >
                     Add Package
@@ -66,11 +66,7 @@ function Nav() {
                     About Us
                   </NavLink>
 
-                  <NavLink
-                    activeClassName="text-lightBlue bg-gray-700"
-                    to="/login"
-                    className="bg-orange nav-link"
-                  >
+                  <NavLink to="/login" className="bg-orange nav-link">
                     Login
                   </NavLink>
                 </div>
@@ -148,7 +144,7 @@ function Nav() {
 
                 <NavLink
                   activeClassName="text-lightBlue bg-gray-700"
-                  to="/cruises"
+                  to="/allPackage"
                   className="collapse-nav-link text-white"
                 >
                   All Package
@@ -164,7 +160,7 @@ function Nav() {
 
                 <NavLink
                   activeClassName="text-lightBlue bg-gray-700"
-                  to="/manageCruises"
+                  to="/manageOrders"
                   className="collapse-nav-link"
                 >
                   Manage Orders
@@ -172,7 +168,7 @@ function Nav() {
 
                 <NavLink
                   activeClassName="text-lightBlue bg-gray-700"
-                  to="/addCruises"
+                  to="/addPackage"
                   className="collapse-nav-link"
                 >
                   Add Package
@@ -186,11 +182,7 @@ function Nav() {
                   About Us
                 </NavLink>
 
-                <NavLink
-                  activeClassName="text-lightBlue bg-gray-700"
-                  to="/login"
-                  className="collapse-nav-link"
-                >
+                <NavLink to="/login" className="collapse-nav-link">
                   Login
                 </NavLink>
               </div>

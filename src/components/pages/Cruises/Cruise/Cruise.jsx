@@ -17,6 +17,12 @@ const Cruise = () => {
           <p className="text-lightBlue">$355</p>
         </div>
 
+        <p className="text-gray-700 mb-2">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt
+          dolores impedit minus dignissimos vitae excepturi totam veritatis
+          repellendus suscipit! Tempore.
+        </p>
+
         <div className="flex items-center justify-between text-gray-500">
           <BsClock />
           <p>5 Jan, 2021</p>

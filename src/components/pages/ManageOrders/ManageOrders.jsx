@@ -3,26 +3,26 @@ import { GiWaterRecycling } from "react-icons/gi";
 import { ImCheckmark } from "react-icons/im";
 import { MdCancel } from "react-icons/md";
 
-const MyOrders = () => {
+const ManageOrders = () => {
   return (
     <div>
       <div
         className="flex items-center justify-center"
         style={{
           background:
-            "linear-gradient(to right bottom, rgba(0,0,0,.95),rgba(0,0,0,.5)) ,url('https://i.ibb.co/Tt7ggXP/my-Order-Bg.jpg') center bottom/cover no-repeat fixed",
+            "linear-gradient(to right bottom, rgba(0,0,0,.95),rgba(0,0,0,.5)) ,url('https://i.ibb.co/kmZQ4Tw/manage-Orders.jpg') center bottom/cover no-repeat fixed",
           minHeight: "40vh",
         }}
       >
         <h2 className="text-5xl text-lightBlue font-bold">
-          Review Your All Booked Package
+          Manage All Packages
         </h2>
       </div>
 
       <div className="my-container py-20">
         <div className="text-center">
           <h2 className="text-4xl text-lightBlue">
-            Hello, <span className="text-orange">User!</span>
+            Hello, <span className="text-green-500">Admin!</span>
           </h2>
           <p className="text-lg text-lightBlue">
             Your are Sign in as , Mehedi@email.com
@@ -41,15 +41,24 @@ const MyOrders = () => {
 
               <div className="">
                 <h4>Cruise Title</h4>
+                <p className="text-sm italic text-gray-600">
+                  Booked by mehedi@gmail.com
+                </p>
                 <p className="text-base text-yellow-600">
                   Status: <span>Pending</span>
                   <GiWaterRecycling className="inline-block ml-1" />
                 </p>
               </div>
 
-              <div className="flex space-x-3 items-center bg-orange text-white px-4 py-1 rounded-full text-base">
-                <MdCancel className="text-red-300" />
-                <button>Cancel Booking</button>
+              <div className="flex flex-col space-y-2">
+                <div className="flex space-x-3 items-center bg-orange text-white px-4 py-1 rounded-full text-base hover:shadow-md focus:ring-2 focus:ring-offset-2 focus:ring-orange cursor-pointer">
+                  <MdCancel className="text-red-300" />
+                  <button>Delete</button>
+                </div>
+                <div className="flex space-x-3 items-center bg-green-500 text-white px-4 py-1 rounded-full text-base hover:shadow-md focus:ring-2 focus:ring-offset-2 focus:ring-green-500 cursor-pointer">
+                  <ImCheckmark className="text-green-300" />
+                  <button>Approve</button>
+                </div>
               </div>
             </div>
 
@@ -62,15 +71,23 @@ const MyOrders = () => {
 
               <div className="">
                 <h4>Cruise Title</h4>
+                <p className="text-sm italic text-gray-600">
+                  Booked by mehedi@gmail.com
+                </p>
                 <p className="text-green-600 text-base">
                   Status: <span>Approved</span>
                   <ImCheckmark className="inline-block ml-1 " />
                 </p>
               </div>
 
-              <div className="flex space-x-3 items-center bg-orange text-white px-4 py-1 rounded-full text-base">
-                <MdCancel className="text-red-300" />
-                <button>Cancel Booking</button>
+              <div className="flex flex-col space-y-2">
+                <div className="flex space-x-3 items-center bg-orange text-white px-4 py-1 rounded-full text-base hover:shadow-md cursor-pointer">
+                  <MdCancel className="text-red-300" />
+                  <button>Delete</button>
+                </div>
+                <div className="flex space-x-3 items-center bg-green-700 cursor-not-allowed text-white px-4 py-1 rounded-full text-base hover:shadow-md">
+                  <button className="cursor-not-allowed">Approved</button>
+                </div>
               </div>
             </div>
           </div>
@@ -80,4 +97,4 @@ const MyOrders = () => {
   );
 };
 
-export default MyOrders;
+export default ManageOrders;
