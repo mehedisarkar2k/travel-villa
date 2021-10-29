@@ -36,7 +36,7 @@ function Nav() {
 
                   <NavLink
                     activeClassName="text-lightBlue bg-gray-700"
-                    to="/myCruises"
+                    to="/myOrders"
                     className="nav-link"
                   >
                     My Order
@@ -156,7 +156,7 @@ function Nav() {
 
                 <NavLink
                   activeClassName="text-lightBlue bg-gray-700"
-                  to="/myCruises"
+                  to="/myOrders"
                   className="collapse-nav-link"
                 >
                   My Order

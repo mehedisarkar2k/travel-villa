@@ -1,5 +1,7 @@
 import React from "react";
-import Cruises from "../Cruises/Cruises";
+import ContactUs from "../../shared/ContactUs/ContactUs";
+import Title from "../../shared/Title/Title";
+import Cruise from "../Cruises/Cruise/Cruise";
 import Banner from "./Banner/Banner";
 import Hotels from "./Hotels/Hotels";
 import Search from "./Search";
@@ -13,9 +15,19 @@ const Home = () => {
       <Search />
       <WhyChoose />
       {/* <Works /> */}
-      <Cruises />
+
+      <div className="my-container py-20">
+        <Title title="Our Cruises Services:" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-6">
+          {[...Array(7).keys()].map(() => (
+            <Cruise key={Math.random()} />
+          ))}
+        </div>
+      </div>
+
       <Services />
       <Hotels />
+      <ContactUs />
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
+import Cruises from "./components/pages/Cruises/Cruises";
 import Home from "./components/pages/Home/Home";
+import MyOrders from "./components/pages/MyOrders/MyOrders";
 import Footer from "./components/shared/Footer/Footer";
 import Header from "./components/shared/Header/Header";
 
@@ -15,6 +17,12 @@ function App() {
           </Route>
           <Route exact path="/home">
             <Home />
+          </Route>
+          <Route exact path="/cruises">
+            <Cruises />
+          </Route>
+          <Route exact path="/myOrders">
+            <MyOrders />
           </Route>
         </Switch>
 
