@@ -4,6 +4,7 @@ import AboutUS from "./components/pages/AboutUs/AboutUS";
 import AddPackage from "./components/pages/AddPackage/AddPackage";
 import Cruises from "./components/pages/Cruises/Cruises";
 import Home from "./components/pages/Home/Home";
+import Login from "./components/pages/Login/LogIn";
 import ManageOrders from "./components/pages/ManageOrders/ManageOrders";
 import MyOrders from "./components/pages/MyOrders/MyOrders";
 import Footer from "./components/shared/Footer/Footer";
@@ -41,6 +42,10 @@ function App() {
 
           <Route exact path="/aboutUs">
             <AboutUS />
+          </Route>
+
+          <Route exact path="/login">
+            <Login />
           </Route>
         </Switch>
 
