@@ -1,9 +1,11 @@
 import { Transition } from "@headlessui/react";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import useAuth from "../../../../hooks/useAuth";
 
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, userSignOut } = useAuth();
   return (
     // <div className="fixed top-0 left-0 w-screen">
     <div className="">
@@ -17,7 +19,7 @@ function Nav() {
                 </h2>
               </div>
               <div className="ml-auto hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
+                <div className="ml-10 flex items-center space-x-4">
                   <NavLink
                     activeClassName="text-lightBlue bg-gray-700"
                     to="/home"
@@ -34,29 +36,41 @@ function Nav() {
                     All Packages
                   </NavLink>
 
-                  <NavLink
-                    activeClassName="text-lightBlue bg-gray-700"
-                    to="/myOrders"
-                    className="nav-link"
-                  >
-                    My Order
-                  </NavLink>
+                  {user.email ? (
+                    <NavLink
+                      activeClassName="text-lightBlue bg-gray-700"
+                      to="/myOrders"
+                      className="nav-link"
+                    >
+                      My Order
+                    </NavLink>
+                  ) : (
+                    ""
+                  )}
 
-                  <NavLink
-                    activeClassName="text-lightBlue bg-gray-700"
-                    to="/manageOrders"
-                    className="nav-link"
-                  >
-                    Manage Order
-                  </NavLink>
+                  {user.email ? (
+                    <NavLink
+                      activeClassName="text-lightBlue bg-gray-700"
+                      to="/manageOrders"
+                      className="nav-link"
+                    >
+                      Manage Order
+                    </NavLink>
+                  ) : (
+                    ""
+                  )}
 
-                  <NavLink
-                    activeClassName="text-lightBlue bg-gray-700"
-                    to="/addPackage"
-                    className="nav-link"
-                  >
-                    Add Package
-                  </NavLink>
+                  {user.email ? (
+                    <NavLink
+                      activeClassName="text-lightBlue bg-gray-700"
+                      to="/addPackage"
+                      className="nav-link"
+                    >
+                      Add Package
+                    </NavLink>
+                  ) : (
+                    ""
+                  )}
 
                   <NavLink
                     activeClassName="text-lightBlue bg-gray-700"
@@ -66,9 +80,25 @@ function Nav() {
                     About Us
                   </NavLink>
 
-                  <NavLink to="/login" className="bg-orange nav-link">
-                    Login
-                  </NavLink>
+                  {user.email ? (
+                    <div className="flex item-center">
+                      <img
+                        src={user.photoURL}
+                        alt=""
+                        className="h-10 w-10 rounded-full"
+                      />
+                      <button
+                        onClick={userSignOut}
+                        className="bg-orange nav-link ml-2"
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  ) : (
+                    <NavLink to="/login" className="bg-orange nav-link">
+                      Login
+                    </NavLink>
+                  )}
                 </div>
               </div>
             </div>
@@ -182,9 +212,25 @@ function Nav() {
                   About Us
                 </NavLink>
 
-                <NavLink to="/login" className="collapse-nav-link">
-                  Login
-                </NavLink>
+                {user.email ? (
+                  <div className="flex item-center">
+                    <img
+                      src={user.photoURL}
+                      alt=""
+                      className="h-40 w-40 rounded-full"
+                    />
+                    <button
+                      onClick={userSignOut}
+                      className="bg-orange nav-link"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                ) : (
+                  <NavLink to="/login" className="bg-orange nav-link">
+                    Login
+                  </NavLink>
+                )}
               </div>
             </div>
           )}

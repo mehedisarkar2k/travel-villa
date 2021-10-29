@@ -7,53 +7,57 @@ import Home from "./components/pages/Home/Home";
 import Login from "./components/pages/Login/LogIn";
 import ManageOrders from "./components/pages/ManageOrders/ManageOrders";
 import MyOrders from "./components/pages/MyOrders/MyOrders";
+import PrivateRoute from "./components/pages/PrivateRoute/PrivateRoute";
 import Footer from "./components/shared/Footer/Footer";
 import Header from "./components/shared/Header/Header";
+import AuthProvider from "./context/AuthProvider";
 
 function App() {
   return (
-    <Router>
-      <div className="min-h-screen flex flex-col w-full">
-        <Header />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
+    <AuthProvider>
+      <Router>
+        <div className="min-h-screen flex flex-col w-full">
+          <Header />
+          <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
 
-          <Route exact path="/home">
-            <Home />
-          </Route>
+            <Route exact path="/home">
+              <Home />
+            </Route>
 
-          <Route exact path="/allPackage">
-            <Cruises />
-          </Route>
+            <Route exact path="/allPackage">
+              <Cruises />
+            </Route>
 
-          <Route exact path="/myOrders">
-            <MyOrders />
-          </Route>
+            <PrivateRoute exact path="/myOrders">
+              <MyOrders />
+            </PrivateRoute>
 
-          <Route exact path="/manageOrders">
-            <ManageOrders />
-          </Route>
+            <PrivateRoute exact path="/manageOrders">
+              <ManageOrders />
+            </PrivateRoute>
 
-          <Route exact path="/addPackage">
-            <AddPackage />
-          </Route>
+            <PrivateRoute exact path="/addPackage">
+              <AddPackage />
+            </PrivateRoute>
 
-          <Route exact path="/aboutUs">
-            <AboutUS />
-          </Route>
+            <Route exact path="/aboutUs">
+              <AboutUS />
+            </Route>
 
-          <Route exact path="/login">
-            <Login />
-          </Route>
-        </Switch>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+          </Switch>
 
-        <div className="mt-auto">
-          <Footer />
+          <div className="mt-auto">
+            <Footer />
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </AuthProvider>
   );
 }
 
