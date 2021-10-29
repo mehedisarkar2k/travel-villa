@@ -1,6 +1,6 @@
 import React from "react";
 import { BiDollar } from "react-icons/bi";
-import { BsHeadset, BsLaptop } from "react-icons/bs";
+import { BsHeadset, BsLaptop, BsPerson } from "react-icons/bs";
 import { GoLocation } from "react-icons/go";
 import { RiShipFill } from "react-icons/ri";
 import BannerStyle from "./Banner.module.css";
@@ -38,6 +38,10 @@ const Banner = () => {
             <p className="text-lg font-medium">24/7 Customer Care</p>
           </div>
         </div>
+
+        <button className="bg-orange text-white px-6 py-2 mt-4">
+          <BsPerson className="inline-block" /> About Us
+        </button>
       </div>
     </div>
   );

@@ -31,7 +31,7 @@ function Nav() {
                     to="/cruises"
                     className="nav-link"
                   >
-                    Cruises
+                    All Packages
                   </NavLink>
 
                   <NavLink
@@ -39,7 +39,7 @@ function Nav() {
                     to="/myCruises"
                     className="nav-link"
                   >
-                    My Cruises
+                    My Order
                   </NavLink>
 
                   <NavLink
@@ -47,7 +47,7 @@ function Nav() {
                     to="/manageCruises"
                     className="nav-link"
                   >
-                    Manage Cruises
+                    Manage Order
                   </NavLink>
 
                   <NavLink
@@ -55,7 +55,7 @@ function Nav() {
                     to="/addCruises"
                     className="nav-link"
                   >
-                    Add Cruises
+                    Add Package
                   </NavLink>
 
                   <NavLink
@@ -151,7 +151,7 @@ function Nav() {
                   to="/cruises"
                   className="collapse-nav-link text-white"
                 >
-                  Cruises
+                  All Package
                 </NavLink>
 
                 <NavLink
@@ -159,7 +159,7 @@ function Nav() {
                   to="/myCruises"
                   className="collapse-nav-link"
                 >
-                  My Cruises
+                  My Order
                 </NavLink>
 
                 <NavLink
@@ -167,7 +167,7 @@ function Nav() {
                   to="/manageCruises"
                   className="collapse-nav-link"
                 >
-                  Manage Cruises
+                  Manage Orders
                 </NavLink>
 
                 <NavLink
@@ -175,7 +175,7 @@ function Nav() {
                   to="/addCruises"
                   className="collapse-nav-link"
                 >
-                  Add Cruises
+                  Add Package
                 </NavLink>
 
                 <NavLink
