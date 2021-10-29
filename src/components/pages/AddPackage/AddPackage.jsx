@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import ContactUs from "../../shared/ContactUs/ContactUs";
 import Title from "../../shared/Title/Title";
 
 const AddPackage = () => {
@@ -34,7 +35,7 @@ const AddPackage = () => {
             <input
               id="title"
               type="text"
-              className="rounded-full w-full px-4 py-1 border-2 border-gray-400 focus:outline-none focus:border-gray-600"
+              className="rounded-full w-full px-4 py-1 border-2 border-gray-300 focus:outline-none focus:border-gray-600"
               defaultValue="title"
               {...register("title")}
             />
@@ -49,7 +50,7 @@ const AddPackage = () => {
                 <input
                   id="price"
                   type="number"
-                  className="rounded-full w-full px-4 py-1 border-2 border-gray-400 focus:outline-none focus:border-gray-600"
+                  className="rounded-full w-full px-4 py-1 border-2 border-gray-300 focus:outline-none focus:border-gray-600"
                   defaultValue="250"
                   {...register("price")}
                 />
@@ -115,10 +116,19 @@ const AddPackage = () => {
 
             <input
               className="bg-darkBlue text-white border-none focus:outline-none focus:ring-2 focus:ring-lightBlue focus:ring-offset-2 hover:bg-lightBlue hover:shadow-lg cursor-pointer py-2 rounded-full text-lg"
-              defaultValue="Add Package"
+              value="Add Package"
               type="submit"
             />
           </form>
+        </div>
+      </div>
+
+      <div className="bg-gray-50">
+        <div className="my-container">
+          <h3 className="mt-20 -mb-10 text-5xl text-center text-darkBlue">
+            Feel free to to message to us
+          </h3>
+          <ContactUs />
         </div>
       </div>
     </>

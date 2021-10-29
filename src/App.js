@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
+import AboutUS from "./components/pages/AboutUs/AboutUS";
 import AddPackage from "./components/pages/AddPackage/AddPackage";
 import Cruises from "./components/pages/Cruises/Cruises";
 import Home from "./components/pages/Home/Home";
@@ -36,6 +37,10 @@ function App() {
 
           <Route exact path="/addPackage">
             <AddPackage />
+          </Route>
+
+          <Route exact path="/aboutUs">
+            <AboutUS />
           </Route>
         </Switch>
 

@@ -13,7 +13,7 @@ const Search = () => {
       <div
         style={{
           background:
-            "linear-gradient(rgba(255,255,255,.75),rgba(255,255,255,.75))",
+            "linear-gradient(rgba(255,255,255,.95),rgba(255,255,255,.95))",
         }}
         className="my-container -mt-10 py-10 shadow-xl"
       >

@@ -2,6 +2,7 @@ import React from "react";
 import { GiWaterRecycling } from "react-icons/gi";
 import { ImCheckmark } from "react-icons/im";
 import { MdCancel } from "react-icons/md";
+import ContactUs from "../../shared/ContactUs/ContactUs";
 
 const MyOrders = () => {
   return (
@@ -74,6 +75,14 @@ const MyOrders = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="bg-blue-50 py-10">
+        <div className="my-container">
+          <h3 className="mt-20 -mb-10 text-5xl text-center text-darkBlue">
+            Feel free to to message to us
+          </h3>
+          <ContactUs />
         </div>
       </div>
     </div>
