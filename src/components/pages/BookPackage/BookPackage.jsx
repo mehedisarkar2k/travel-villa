@@ -1,41 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useParams } from "react-router";
 import useAuth from "../../../hooks/useAuth";
+import useMethods from "../../../hooks/useMethods";
 
 const BookPackage = () => {
   const { user } = useAuth();
   const { id } = useParams();
-  const [orderItem, setOrderItem] = useState({});
+  const { placeOrder, orderItem, fetchOrderItemByID } = useMethods();
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => placeOrder(data);
 
   useEffect(() => {
-    fetch(`https://peaceful-plateau-88614.herokuapp.com/cruises/${id}`)
-      .then((res) => res.json())
-      .then((data) => setOrderItem(data));
-  }, [id]);
-
-  const placeOrder = (data) => {
-    const newData = { ...orderItem };
-    newData.name = data.name;
-    newData.email = data.email;
-    newData.address = data.address;
-    newData.status = "pending";
-
-    console.log(newData);
-
-    fetch("https://peaceful-plateau-88614.herokuapp.com/addOrder", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newData),
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
-  };
+    fetchOrderItemByID(id);
+  }, [id, fetchOrderItemByID]);
 
   return (
     <div>
