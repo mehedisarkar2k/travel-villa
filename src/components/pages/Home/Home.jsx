@@ -23,7 +23,7 @@ const Home = () => {
         <Title title="Our Cruises Services:" />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-6">
           {cruises.slice(4).map((cruise) => (
-            <Cruise key={cruise} cruise={cruise} />
+            <Cruise key={cruise._id} cruise={cruise} />
           ))}
         </div>
       </div>

@@ -1,20 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router";
 import useAuth from "../../../hooks/useAuth";
 
 const BookPackage = () => {
   const { user } = useAuth();
+  const { id } = useParams();
+  const [orderItem, setOrderItem] = useState({});
 
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => placeOrder(data);
+
+  useEffect(() => {
+    fetch(`https://peaceful-plateau-88614.herokuapp.com/cruises/${id}`)
+      .then((res) => res.json())
+      .then((data) => setOrderItem(data));
+  }, [id]);
+
+  const placeOrder = (data) => {
+    const newData = { ...orderItem };
+    newData.name = data.name;
+    newData.email = data.email;
+    newData.address = data.address;
+    newData.status = "pending";
+
+    console.log(newData);
+
+    fetch("http://localhost:5000/addOrder", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newData),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  };
 
   return (
     <div>
       <div className="my-container py-20">
         <div className="grid rounded-xl shadow-lg grid-cols-1 md:grid-cols-2 bg-gray-100">
           <div className="p-10 ">
-            <img src="https://i.ibb.co/qsBhjtc/cruise-Banner.jpg" alt="" />
-            <h3 className="text-3xl mt-2 text-orange">Tour Cruise</h3>
+            <img src={orderItem?.img} alt="" />
+            <h3 className="text-3xl mt-2 text-orange">{orderItem?.title}</h3>
 
             <div className="px-10 mt-2 space-y-2">
               <div className="flex items-center justify-between">
@@ -23,7 +52,7 @@ const BookPackage = () => {
               </div>
               <div className="flex items-center justify-between">
                 <p>Your Total Cost:</p>
-                <p>$250</p>
+                <p>${orderItem?.price}</p>
               </div>
             </div>
           </div>
@@ -64,7 +93,7 @@ const BookPackage = () => {
                 id="address"
                 className="rounded-lg w-full px-4 py-1 border-2 border-gray-400 focus:outline-none focus:border-gray-600"
                 placeholder="73/2 A, Mirpur, Dhaka, Bangladesh"
-                {...register("description")}
+                {...register("address")}
               />
 
               <input

@@ -7,7 +7,6 @@ const useData = () => {
     fetch("https://peaceful-plateau-88614.herokuapp.com/cruises")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setCruises(data);
       });
   }, []);
