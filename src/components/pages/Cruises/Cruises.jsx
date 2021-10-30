@@ -1,9 +1,11 @@
 import React from "react";
+import useData from "../../../hooks/useData";
 import Title from "../../shared/Title/Title";
 import CruiseStyle from "./Cruise.module.css";
 import Cruise from "./Cruise/Cruise";
 
 const Cruises = () => {
+  const { cruises } = useData();
   return (
     <div className="bg-blue-50">
       <div className={CruiseStyle.banner}>
@@ -12,8 +14,8 @@ const Cruises = () => {
       <div className="my-container py-20">
         <Title title="Our Cruises Services:" />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-6">
-          {[...Array(12).keys()].map(() => (
-            <Cruise key={Math.random()} />
+          {cruises.map((cruise) => (
+            <Cruise key={cruise._id} cruise={cruise} />
           ))}
         </div>
       </div>

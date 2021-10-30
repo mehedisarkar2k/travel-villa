@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import AboutUS from "./components/pages/AboutUs/AboutUS";
 import AddPackage from "./components/pages/AddPackage/AddPackage";
+import BookPackage from "./components/pages/BookPackage/BookPackage";
 import Cruises from "./components/pages/Cruises/Cruises";
 import Home from "./components/pages/Home/Home";
 import Login from "./components/pages/Login/LogIn";
@@ -33,6 +34,10 @@ function App() {
 
             <PrivateRoute exact path="/myOrders">
               <MyOrders />
+            </PrivateRoute>
+
+            <PrivateRoute exact path="/bookPackage/:id">
+              <BookPackage />
             </PrivateRoute>
 
             <PrivateRoute exact path="/manageOrders">

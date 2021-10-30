@@ -2,8 +2,11 @@ import React from "react";
 import { GiWaterRecycling } from "react-icons/gi";
 import { ImCheckmark } from "react-icons/im";
 import { MdCancel } from "react-icons/md";
+import useAuth from "../../../hooks/useAuth";
 
 const ManageOrders = () => {
+  const { user } = useAuth();
+
   return (
     <div>
       <div
@@ -25,7 +28,7 @@ const ManageOrders = () => {
             Hello, <span className="text-green-500">Admin!</span>
           </h2>
           <p className="text-lg text-lightBlue">
-            Your are Sign in as , Mehedi@email.com
+            Your are Sign in as , {user?.email}
           </p>
         </div>
 
@@ -62,7 +65,7 @@ const ManageOrders = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-between space-x-2 shadow-md hover:shadow-lg rounded-md py-6 px-10 bg-gray-100 text-2xl">
+            <div className="flex items-center justify-between space-x-2 shadow-md hover:shadow-lg rounded-md py-6 px-10 bg-green-100 text-2xl">
               <img
                 src="https://i.ibb.co/q5cXwzZ/banner-1.jpg"
                 alt=""

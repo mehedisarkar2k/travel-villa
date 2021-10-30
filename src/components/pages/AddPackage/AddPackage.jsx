@@ -90,19 +90,6 @@ const AddPackage = () => {
             />
             <label
               className="text-left mt-8 inline-block text-xl text-lightBlue"
-              htmlFor="date"
-            >
-              Package Time
-            </label>
-            <input
-              id="data"
-              type="date"
-              className="rounded-full w-full px-4 py-1 border-2 border-gray-400 focus:outline-none focus:border-gray-600"
-              defaultValue={new Date().toLocaleDateString()}
-              {...register("date")}
-            />
-            <label
-              className="text-left mt-8 inline-block text-xl text-lightBlue"
               htmlFor="description"
             >
               Package Description
