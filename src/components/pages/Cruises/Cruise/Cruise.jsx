@@ -20,16 +20,19 @@ const Cruise = ({ cruise }) => {
         />
       </div>
       <div className="mt-2 p-4">
-        <div className="flex flex-col mb-4 items-center justify-between text-2xl flex-wrap">
+        <div className="text-2xl flex-wrap">
           <h4 className="text-gray-900">{title}</h4>
-          <p className="text-lightBlue font-bold">${price}</p>
         </div>
 
         <p className="text-gray-700 mb-2">{description.slice(0, 150)}</p>
 
-        <div className="flex items-center justify-between text-gray-500">
-          <BsClock />
-          <p className="uppercase">{duration}</p>
+        <div className="flex items-center justify-between mt-4">
+          <div className="flex items-center text-gray-500">
+            <BsClock />
+            <p className="uppercase ml-2">{duration}</p>
+          </div>
+
+          <p className="text-lightBlue font-bold">${price}</p>
         </div>
 
         <div className="text-white flex item-center justify-between mt-4">

@@ -26,9 +26,13 @@ const Home = () => {
       <div className="my-container py-20">
         <Title title="Our Cruises Services:" />
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 mt-6">
-          {cruises.slice(4).map((cruise) => (
-            <Cruise key={cruise._id} cruise={cruise} />
-          ))}
+          {cruises.length > 4
+            ? cruises
+                .slice(5)
+                .map((cruise) => <Cruise key={cruise._id} cruise={cruise} />)
+            : cruises.map((cruise) => (
+                <Cruise key={cruise._id} cruise={cruise} />
+              ))}
         </div>
       </div>
 

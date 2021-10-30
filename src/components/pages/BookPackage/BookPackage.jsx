@@ -1,20 +1,63 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router";
+import { useHistory, useParams } from "react-router";
+import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
-import useMethods from "../../../hooks/useMethods";
 
 const BookPackage = () => {
   const { user } = useAuth();
   const { id } = useParams();
-  const { placeOrder, orderItem, fetchOrderItemByID } = useMethods();
+  const [orderItem, setOrderItem] = useState({});
+  const history = useHistory();
 
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => placeOrder(data);
 
   useEffect(() => {
-    fetchOrderItemByID(id);
-  }, [id, fetchOrderItemByID]);
+    fetch(`https://peaceful-plateau-88614.herokuapp.com/cruises/${id}`)
+      .then((res) => res.json())
+      .then((data) => setOrderItem(data));
+  }, [id]);
+
+  const placeOrder = (data) => {
+    const newData = { ...orderItem };
+    newData.name = data.name;
+    newData.email = data.email;
+    newData.address = data.address;
+    newData.status = "pending";
+
+    fetch("https://peaceful-plateau-88614.herokuapp.com/addOrder", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newData),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Great, Ordered Successfully!",
+            showDenyButton: true,
+            confirmButtonText: "Go to home",
+            denyButtonText: `See your ordered item`,
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              history.push("/home");
+            } else if (result.isDenied) {
+              history.push("/myOrders");
+            }
+          });
+        } else {
+          Swal.fire("Product already booked by other user or you!");
+        }
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
 
   return (
     <div>

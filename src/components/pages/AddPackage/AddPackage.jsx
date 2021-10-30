@@ -1,11 +1,40 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import ContactUs from "../../shared/ContactUs/ContactUs";
+import { useHistory } from "react-router";
+import Swal from "sweetalert2";
 import Title from "../../shared/Title/Title";
 
 const AddPackage = () => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const history = useHistory();
+
+  const onSubmit = (data) => {
+    console.log(data);
+    fetch("http://localhost:5000/addPackage", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data) {
+          Swal.fire({
+            title: "Items Added Successfully!!",
+            showDenyButton: true,
+            confirmButtonText: "Ok go to home",
+            denyButtonText: `Stay here`,
+          }).then((result) => {
+            if (result.isConfirmed) {
+              history.push("/home");
+            }
+          });
+        }
+        // console.log(data);
+      });
+  };
+
   return (
     <>
       <div
@@ -58,20 +87,17 @@ const AddPackage = () => {
               <div className="price">
                 <label
                   className="text-left inline-block text-xl text-lightBlue"
-                  htmlFor="time"
+                  htmlFor="duration"
                 >
                   Package Time
                 </label>
-                <select
-                  className="rounded-full w-full px-4 py-1 border-2 border-gray-400 focus:outline-none focus:border-gray-600"
-                  defaultValue="Select One"
-                  {...register("time")}
-                  id="time"
-                >
-                  <option value="1day-2night">1Day-2Night</option>
-                  <option value="2day-3night">2day-3night</option>
-                  <option value="3day-4night">3day-4night</option>
-                </select>
+                <input
+                  id="duration"
+                  type="text"
+                  className="rounded-full w-full px-4 py-1 border-2 border-gray-300 focus:outline-none focus:border-gray-600"
+                  defaultValue="Full day"
+                  {...register("duration")}
+                />
               </div>
             </div>
 
@@ -107,15 +133,6 @@ const AddPackage = () => {
               type="submit"
             />
           </form>
-        </div>
-      </div>
-
-      <div className="bg-gray-50">
-        <div className="my-container">
-          <h3 className="mt-20 -mb-10 text-5xl text-center text-darkBlue">
-            Feel free to to message to us
-          </h3>
-          <ContactUs />
         </div>
       </div>
     </>

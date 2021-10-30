@@ -1,62 +1,57 @@
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 const useMethods = () => {
   const [updateUI, setUpdateUI] = useState(null);
-  const [orderItem, setOrderItem] = useState({});
 
-  const fetchOrderItemByID = (id) => {
-    fetch(`https://peaceful-plateau-88614.herokuapp.com/cruises/${id}`)
-      .then((res) => res.json())
-      .then((data) => setOrderItem(data));
+  const cancelOrder = (id) => {
+    Swal.fire({
+      title: "Are you sure to delete this item?",
+      showDenyButton: true,
+      confirmButtonText: "Yes, Delete this!",
+      denyButtonText: `Ops! Don't delete.`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(
+          `https://peaceful-plateau-88614.herokuapp.com/cancelOrder?pdID=${id}`,
+          {
+            method: "DELETE",
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            if (data) {
+              setUpdateUI(!updateUI);
+            } else {
+              setUpdateUI(false);
+            }
+          })
+          .catch((err) => console.log(err.message));
+      }
+    });
   };
 
-  const placeOrder = (data) => {
-    const newData = { ...orderItem };
-    newData.name = data.name;
-    newData.email = data.email;
-    newData.address = data.address;
-    newData.status = "pending";
-
-    console.log(newData);
-
-    fetch("https://peaceful-plateau-88614.herokuapp.com/addOrder", {
-      method: "POST",
+  const updateOrder = (id) => {
+    fetch(`http://localhost:5000/updateOrder?pdID=${id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(newData),
+      body: JSON.stringify({ status: "approved" }),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
-  };
-
-  const cancelOrder = (id) => {
-    console.log(id);
-    fetch(
-      `https://peaceful-plateau-88614.herokuapp.com/cancelOrder?pdID=${id}`,
-      {
-        method: "DELETE",
-      }
-    )
-      .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data) {
           setUpdateUI(!updateUI);
+          Swal.fire("Product approved successfully!");
         } else {
           setUpdateUI(false);
         }
-      });
+      })
+      .catch((err) => console.log(err.message));
   };
 
-  return {
-    cancelOrder,
-    updateUI,
-    placeOrder,
-    setOrderItem,
-    orderItem,
-    fetchOrderItemByID,
-  };
+  return { cancelOrder, updateOrder, updateUI };
 };
 
 export default useMethods;

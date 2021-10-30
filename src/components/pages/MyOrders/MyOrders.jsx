@@ -5,7 +5,6 @@ import { MdCancel } from "react-icons/md";
 import useAuth from "../../../hooks/useAuth";
 import useData from "../../../hooks/useData";
 import useMethods from "../../../hooks/useMethods";
-import ContactUs from "../../shared/ContactUs/ContactUs";
 import Spinner from "../../shared/Spinner/Spinner";
 
 const MyOrders = () => {
@@ -103,14 +102,6 @@ const MyOrders = () => {
               </h2>
             )}
           </div>
-        </div>
-      </div>
-      <div className="bg-blue-50 py-10">
-        <div className="my-container">
-          <h3 className="mt-20 -mb-10 text-5xl text-center text-darkBlue">
-            Feel free to to message to us
-          </h3>
-          <ContactUs />
         </div>
       </div>
     </div>

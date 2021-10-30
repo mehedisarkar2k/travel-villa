@@ -11,7 +11,7 @@ const ManageOrders = () => {
   const [allOrders, setAllMyOrders] = useState([]);
   const { user } = useAuth();
   const { cruises } = useData();
-  const { cancelOrder, updateUI } = useMethods();
+  const { cancelOrder, updateUI, updateOrder } = useMethods();
 
   useEffect(() => {
     fetch(`https://peaceful-plateau-88614.herokuapp.com/manageOrders`)
@@ -97,7 +97,10 @@ const ManageOrders = () => {
                       <button>Delete</button>
                     </div>
                     {order?.status === "pending" ? (
-                      <div className="flex space-x-3 items-center bg-green-500 text-white px-4 py-1 rounded-full text-base hover:shadow-md focus:ring-2 focus:ring-offset-2 focus:ring-green-500 cursor-pointer">
+                      <div
+                        onClick={() => updateOrder(order?._id)}
+                        className="flex space-x-3 items-center bg-green-500 text-white px-4 py-1 rounded-full text-base hover:shadow-md focus:ring-2 focus:ring-offset-2 focus:ring-green-500 cursor-pointer"
+                      >
                         <ImCheckmark className="text-green-300" />
                         <button>Approve</button>
                       </div>
