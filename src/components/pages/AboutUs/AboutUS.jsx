@@ -18,9 +18,8 @@ const AboutUS = () => {
       >
         <div className="text-5xl font-bold text-lightBlue">About Us</div>
         <p className="text-gray-50 w-1/2 text-center mt-2 text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-          fugit neque temporibus qui soluta vel culpa excepturi fugiat, mollitia
-          deleniti.
+          You will realise how you really feel about foreign people. You will
+          find out how much you know/do not know about the world.
         </p>
       </div>
 
@@ -36,14 +35,14 @@ const AboutUS = () => {
           <div className="p-10">
             <Title title="About Us" />
             <h3 className="text-3xl text-gray-700">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Repellendus, cupiditate.
+              You will realise how you really feel about foreign people.
             </h3>
             <p className="text-gray-600 mt-2">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem
-              corrupti distinctio explicabo velit. Quis consequatur, ullam quod
-              esse quisquam culpa natus facere velit ratione voluptas, dolores
-              molestias reiciendis harum? Voluptatem.
+              Travel is the movement of people between distant geographical
+              locations. Travel can be done by foot, bicycle, automobile, train,
+              boat, bus, airplane. You will realise how you really feel about
+              foreign people. You will find out how much you know/do not know
+              about the world.
             </p>
 
             <button className="px-6 py-3 bg-darkBlue border-none focus:outline-none focus:ring-offset-2 focus:ring-2 focus:ring-lightBlue text-white mt-4 rounded-2xl transition hover:bg-lightBlue hover:shadow-xl">

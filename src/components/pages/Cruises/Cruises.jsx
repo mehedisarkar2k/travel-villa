@@ -15,7 +15,9 @@ const Cruises = () => {
   return (
     <div className="bg-blue-50">
       <div className={CruiseStyle.banner}>
-        <h2 className="text-5xl text-lightBlue font-bold">Our All Packages</h2>
+        <h2 className="text-4xl md:text-5xl text-lightBlue font-bold text-center">
+          Our All Packages
+        </h2>
       </div>
       <div className="my-container py-20">
         <Title title="Our Cruises Services:" />

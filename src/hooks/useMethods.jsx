@@ -32,13 +32,16 @@ const useMethods = () => {
   };
 
   const updateOrder = (id) => {
-    fetch(`http://localhost:5000/updateOrder?pdID=${id}`, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ status: "approved" }),
-    })
+    fetch(
+      `https://peaceful-plateau-88614.herokuapp.com/updateOrder?pdID=${id}`,
+      {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ status: "approved" }),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data) {

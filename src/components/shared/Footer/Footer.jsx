@@ -27,9 +27,9 @@ const Footer = () => {
               <span className="text-darkBlue">Travel </span>Vila
             </h2>
             <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illo,
-              deleniti quae. Pariatur voluptatem est omnis consectetur eius
-              error quo quaerat.
+              Join us on a Villa Park Stadium Tour and Step behind the scenes,
+              soak up the atmosphere and walk in the footsteps of your Villa
+              heroes in an unforgettable
             </p>
             <div className="flex space-x-4">
               <BsFacebook className="transition text-xl cursor-pointer hover:text-orange" />
@@ -77,7 +77,9 @@ const Footer = () => {
           </div>
           <div className="">
             <h3 className="text-3xl mb-2">Newsletter</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <p>
+              Join us on a Villa Park Stadium Tour and Step behind the scenes.
+            </p>
 
             <div className="flex space-x-1 items-center rounded-lg p-2 border-2 border-lightBlue mt-4">
               <FaEnvelope className="text-lg text-lightBlue" />

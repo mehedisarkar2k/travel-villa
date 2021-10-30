@@ -8,7 +8,7 @@ function Nav() {
   const { user, userSignOut } = useAuth();
   return (
     // <div className="fixed top-0 left-0 w-screen">
-    <div className="">
+    <div className="w-full">
       <nav className="bg-gray-800 py-4 lg:py-1">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
@@ -213,11 +213,11 @@ function Nav() {
                 </NavLink>
 
                 {user.email ? (
-                  <div className="flex item-center">
+                  <div className="flex justify-center space-x-4 item-center">
                     <img
                       src={user.photoURL}
                       alt=""
-                      className="h-40 w-40 rounded-full"
+                      className="h-10 w-10 rounded-full"
                     />
                     <button
                       onClick={userSignOut}

@@ -10,7 +10,7 @@ const AddPackage = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    fetch("http://localhost:5000/addPackage", {
+    fetch("https://peaceful-plateau-88614.herokuapp.com/addPackage", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -41,7 +41,7 @@ const AddPackage = () => {
         className="flex items-center justify-center"
         style={{
           background:
-            "linear-gradient(to right bottom, rgba(0,0,0,.95),rgba(0,0,0,.5)) ,url('https://i.ibb.co/Tt7ggXP/my-Order-Bg.jpg') center bottom/cover no-repeat fixed",
+            "linear-gradient(to right bottom, rgba(0,0,0,.95),rgba(0,0,0,.5)) ,url('https://i.ibb.co/Yf7s9WV/my-Order-Bg.jpg') center bottom/cover no-repeat fixed",
           minHeight: "40vh",
         }}
       >
@@ -52,7 +52,7 @@ const AddPackage = () => {
         <div className="my-container py-20">
           <Title title="Add New Package" />
           <form
-            className="-mt-24 w-full md:w-1/2 lg:w-1/3 mx-auto flex flex-col  justify-center space-y-2"
+            className="lg:-mt-24 w-full md:w-1/2 lg:w-1/3 mx-auto flex flex-col  justify-center space-y-2"
             onSubmit={handleSubmit(onSubmit)}
           >
             <label

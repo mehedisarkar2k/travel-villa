@@ -29,11 +29,11 @@ const ManageOrders = () => {
         className="flex items-center justify-center"
         style={{
           background:
-            "linear-gradient(to right bottom, rgba(0,0,0,.95),rgba(0,0,0,.5)) ,url('https://i.ibb.co/kmZQ4Tw/manage-Orders.jpg') center bottom/cover no-repeat fixed",
+            "linear-gradient(to right bottom, rgba(0,0,0,.95),rgba(0,0,0,.5)) ,url('https://i.ibb.co/Mf7fgw3/manage-Orders.jpg') center bottom/cover no-repeat fixed",
           minHeight: "40vh",
         }}
       >
-        <h2 className="text-5xl text-lightBlue font-bold">
+        <h2 className="text-center text-4xl md:text-5xl text-lightBlue font-bold">
           Manage All Packages
         </h2>
       </div>
@@ -55,7 +55,7 @@ const ManageOrders = () => {
               allOrders?.map((order, index) => (
                 <div
                   key={index}
-                  className={`flex items-center justify-between space-x-2 shadow-md hover:shadow-lg rounded-md py-6 px-10 ${
+                  className={`flex flex-col md:flex-row space-y-2 items-center justify-between space-x-2 shadow-md hover:shadow-lg rounded-md py-6 px-10 ${
                     order?.status === "pending"
                       ? "bg-yellow-50"
                       : "bg-green-100"

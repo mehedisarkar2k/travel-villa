@@ -31,18 +31,18 @@ const MyOrders = () => {
         className="flex items-center justify-center"
         style={{
           background:
-            "linear-gradient(to right bottom, rgba(0,0,0,.95),rgba(0,0,0,.5)) ,url('https://i.ibb.co/Tt7ggXP/my-Order-Bg.jpg') center bottom/cover no-repeat fixed",
+            "linear-gradient(to right bottom, rgba(0,0,0,.95),rgba(0,0,0,.5)) ,url('https://i.ibb.co/Yf7s9WV/my-Order-Bg.jpg') center bottom/cover no-repeat fixed",
           minHeight: "40vh",
         }}
       >
-        <h2 className="text-5xl text-lightBlue font-bold">
+        <h2 className="text-3xl md:text-5xl text-center text-lightBlue font-bold">
           Review Your All Booked Package
         </h2>
       </div>
 
       <div className="my-container py-20">
         <div className="text-center">
-          <h2 className="text-4xl text-lightBlue">
+          <h2 className="text-3xl md:text-4xl text-lightBlue">
             Hello, <span className="text-orange">{user?.displayName}!</span>
           </h2>
           <p className="text-lg text-lightBlue">
@@ -51,13 +51,15 @@ const MyOrders = () => {
         </div>
 
         <div className=" w-2/3 mx-auto text-gray-800">
-          <h3 className="text-3xl mb-4 mt-8">Your All Booked Items</h3>
+          <h3 className="text-2xl md:text-3xl mb-4 mt-8">
+            Your All Booked Items
+          </h3>
           <div className="flex flex-col space-y-4">
             {myOrders.length > 0 ? (
               myOrders?.map((order, index) => (
                 <div
                   key={index}
-                  className={`flex items-center justify-between space-x-2 shadow-md hover:shadow-lg rounded-md py-6 px-10 ${
+                  className={`flex flex-col md:flex-row items-center justify-between space-x-2 shadow-md hover:shadow-lg rounded-md py-6 px-10 ${
                     order?.status === "pending"
                       ? "bg-yellow-50"
                       : "bg-green-100"
@@ -89,10 +91,12 @@ const MyOrders = () => {
 
                   <div
                     onClick={() => cancelOrder(order?._id)}
-                    className="flex space-x-3 items-center bg-orange text-white px-4 py-1 rounded-full text-base"
+                    className="flex  flex-col md:flex-row space-x-3 items-center bg-orange text-white px-4 py-1 rounded-full text-base"
                   >
-                    <MdCancel className="text-red-300" />
-                    <button>Cancel Booking</button>
+                    <MdCancel className="text-red-300 text-2xl md:text-base" />
+                    <span className="hidden md:block">
+                      <button>Cancel Booking</button>
+                    </span>
                   </div>
                 </div>
               ))
