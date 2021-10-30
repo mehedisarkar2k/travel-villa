@@ -3,12 +3,16 @@ import { GiWaterRecycling } from "react-icons/gi";
 import { ImCheckmark } from "react-icons/im";
 import { MdCancel } from "react-icons/md";
 import useAuth from "../../../hooks/useAuth";
+import useData from "../../../hooks/useData";
+import useMethods from "../../../hooks/useMethods";
 import ContactUs from "../../shared/ContactUs/ContactUs";
 import Spinner from "../../shared/Spinner/Spinner";
 
 const MyOrders = () => {
   const [myOrders, setMyOrders] = useState([]);
   const { user } = useAuth();
+  const { cruises } = useData();
+  const { cancelOrder, updateUI } = useMethods();
 
   useEffect(() => {
     fetch(
@@ -16,9 +20,9 @@ const MyOrders = () => {
     )
       .then((res) => res.json())
       .then((data) => setMyOrders(data));
-  }, [user.email]);
+  }, [user.email, updateUI]);
 
-  if (myOrders.length < 1) {
+  if (cruises.length < 0) {
     return <Spinner />;
   }
 
@@ -84,7 +88,10 @@ const MyOrders = () => {
                     </p>
                   </div>
 
-                  <div className="flex space-x-3 items-center bg-orange text-white px-4 py-1 rounded-full text-base">
+                  <div
+                    onClick={() => cancelOrder(order?._id)}
+                    className="flex space-x-3 items-center bg-orange text-white px-4 py-1 rounded-full text-base"
+                  >
                     <MdCancel className="text-red-300" />
                     <button>Cancel Booking</button>
                   </div>
@@ -95,27 +102,6 @@ const MyOrders = () => {
                 Your Cart is empty!!
               </h2>
             )}
-
-            {/* <div className="flex items-center justify-between space-x-2 shadow-md hover:shadow-lg rounded-md py-6 px-10 bg-green-100 text-2xl">
-              <img
-                src="https://i.ibb.co/q5cXwzZ/banner-1.jpg"
-                alt=""
-                className="w-20 h-20 rounded-full"
-              />
-
-              <div className="">
-                <h4>Cruise Title</h4>
-                <p className="text-green-600 text-base">
-                  Status: <span>Approved</span>
-                  <ImCheckmark className="inline-block ml-1 " />
-                </p>
-              </div>
-
-              <div className="flex space-x-3 items-center bg-orange text-white px-4 py-1 rounded-full text-base">
-                <MdCancel className="text-red-300" />
-                <button>Cancel Booking</button>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>
