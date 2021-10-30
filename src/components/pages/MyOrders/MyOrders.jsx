@@ -10,7 +10,9 @@ const MyOrders = () => {
   const { user } = useAuth();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myOrders?email=${user?.email}`)
+    fetch(
+      `https://peaceful-plateau-88614.herokuapp.com/myOrders?email=${user?.email}`
+    )
       .then((res) => res.json())
       .then((data) => setMyOrders(data));
   }, [user.email]);

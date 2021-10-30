@@ -26,7 +26,7 @@ const BookPackage = () => {
 
     console.log(newData);
 
-    fetch("http://localhost:5000/addOrder", {
+    fetch("https://peaceful-plateau-88614.herokuapp.com/addOrder", {
       method: "POST",
       headers: {
         "content-type": "application/json",
