@@ -4,6 +4,7 @@ import { ImCheckmark } from "react-icons/im";
 import { MdCancel } from "react-icons/md";
 import useAuth from "../../../hooks/useAuth";
 import ContactUs from "../../shared/ContactUs/ContactUs";
+import Spinner from "../../shared/Spinner/Spinner";
 
 const MyOrders = () => {
   const [myOrders, setMyOrders] = useState([]);
@@ -16,6 +17,10 @@ const MyOrders = () => {
       .then((res) => res.json())
       .then((data) => setMyOrders(data));
   }, [user.email]);
+
+  if (myOrders.length < 1) {
+    return <Spinner />;
+  }
 
   return (
     <div>

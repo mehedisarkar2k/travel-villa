@@ -3,6 +3,7 @@ import { GiWaterRecycling } from "react-icons/gi";
 import { ImCheckmark } from "react-icons/im";
 import { MdCancel } from "react-icons/md";
 import useAuth from "../../../hooks/useAuth";
+import Spinner from "../../shared/Spinner/Spinner";
 
 const ManageOrders = () => {
   const [allOrders, setAllMyOrders] = useState([]);
@@ -13,6 +14,10 @@ const ManageOrders = () => {
       .then((res) => res.json())
       .then((data) => setAllMyOrders(data));
   }, [user.email]);
+
+  if (allOrders.length < 1) {
+    return <Spinner />;
+  }
 
   return (
     <div>

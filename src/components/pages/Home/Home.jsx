@@ -1,6 +1,7 @@
 import React from "react";
 import useData from "../../../hooks/useData";
 import ContactUs from "../../shared/ContactUs/ContactUs";
+import Spinner from "../../shared/Spinner/Spinner";
 import Title from "../../shared/Title/Title";
 import Cruise from "../Cruises/Cruise/Cruise";
 import Banner from "./Banner/Banner";
@@ -12,6 +13,9 @@ import WhyChoose from "./WhyChoose/WhyChoose";
 const Home = () => {
   const { cruises } = useData();
 
+  if (cruises.length < 1) {
+    return <Spinner />;
+  }
   return (
     <div className="bg-gray-50">
       <Banner />

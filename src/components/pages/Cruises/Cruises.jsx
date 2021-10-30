@@ -1,11 +1,17 @@
 import React from "react";
 import useData from "../../../hooks/useData";
+import Spinner from "../../shared/Spinner/Spinner";
 import Title from "../../shared/Title/Title";
 import CruiseStyle from "./Cruise.module.css";
 import Cruise from "./Cruise/Cruise";
 
 const Cruises = () => {
   const { cruises } = useData();
+
+  if (cruises.length < 1) {
+    return <Spinner />;
+  }
+
   return (
     <div className="bg-blue-50">
       <div className={CruiseStyle.banner}>
