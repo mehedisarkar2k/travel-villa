@@ -5,9 +5,12 @@ const useMethods = () => {
 
   const cancelOrder = (id) => {
     console.log(id);
-    fetch(`http://localhost:5000/cancelOrder?pdID=${id}`, {
-      method: "DELETE",
-    })
+    fetch(
+      `https://peaceful-plateau-88614.herokuapp.com/cancelOrder?pdID=${id}`,
+      {
+        method: "DELETE",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
