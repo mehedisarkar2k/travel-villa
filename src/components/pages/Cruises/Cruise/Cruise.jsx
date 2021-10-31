@@ -21,7 +21,7 @@ const Cruise = ({ cruise }) => {
       </div>
       <div className="mt-2 p-4">
         <div className="text-2xl flex-wrap">
-          <h4 className="text-gray-900">{title}</h4>
+          <h4 className="text-gray-900 break-words">{title}</h4>
         </div>
 
         <p className="text-gray-700 mb-2">{description.slice(0, 150)}</p>
