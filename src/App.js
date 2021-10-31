@@ -8,6 +8,7 @@ import Home from "./components/pages/Home/Home";
 import Login from "./components/pages/Login/LogIn";
 import ManageOrders from "./components/pages/ManageOrders/ManageOrders";
 import MyOrders from "./components/pages/MyOrders/MyOrders";
+import NotFound from "./components/pages/NotFound/NotFound";
 import PrivateRoute from "./components/pages/PrivateRoute/PrivateRoute";
 import Footer from "./components/shared/Footer/Footer";
 import Header from "./components/shared/Header/Header";
@@ -54,6 +55,10 @@ function App() {
 
             <Route exact path="/login">
               <Login />
+            </Route>
+
+            <Route exact path="*">
+              <NotFound />
             </Route>
           </Switch>
 
