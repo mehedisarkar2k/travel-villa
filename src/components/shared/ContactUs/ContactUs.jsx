@@ -9,14 +9,18 @@ const ContactUs = () => {
     <div
       style={{
         background:
-          "linear-gradient(to right bottom, rgba(0,0,0,.95),rgba(0,0,0,.5)) ,url('https://i.ibb.co/cCF4TZw/contact-BG.jpg') bottom bottom/cover no-repeat fixed",
+          "linear-gradient(to bottom, rgba(0,0,0,.9),rgba(0,0,0,.5)), url('https://i.ibb.co/6FKcHB4/banner-1.jpg') center center/cover no-repeat",
       }}
+      // style={{
+      //   background:
+      //     "linear-gradient(to right bottom, rgba(0,0,0,.95),rgba(0,0,0,.5)), url('https://i.ibb.co/cCF4TZw/contact-BG.jpg') bottom bottom/cover no-repeat fixed",
+      // }}
     >
       <div className="my-container py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="rounded-2xl overflow-hidden shadow-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+          <div className="md:w-4/5 md:h-4/5 rounded-2xl overflow-hidden shadow-2xl">
             <img
-              className="transition transform hover:scale-110 rounded-2xl w-full h-full"
+              className="transition object-cover transform hover:scale-110 rounded-2xl w-full h-full"
               src="https://i.ibb.co/9pb4wp3/contact-Img.jpg"
               alt=""
             />

@@ -18,7 +18,7 @@ function Nav() {
                   <span className="text-darkBlue">Travel </span>Vila
                 </h2>
               </div>
-              <div className="ml-auto hidden md:block">
+              <div className="ml-auto hidden lg:block">
                 <div className="ml-10 flex items-center space-x-4">
                   <NavLink
                     activeClassName="text-lightBlue bg-gray-700"
@@ -102,7 +102,7 @@ function Nav() {
                 </div>
               </div>
             </div>
-            <div className="-mr-2 flex md:hidden">
+            <div className="-mr-2 flex lg:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 type="button"
@@ -159,7 +159,7 @@ function Nav() {
           leaveTo="opacity-0 scale-95"
         >
           {(ref) => (
-            <div className="text-center md:hidden" id="mobile-menu">
+            <div className="text-center lg:hidden" id="mobile-menu">
               <div
                 ref-setter={ref}
                 className="px-2 pt-2 pb-3 space-y-1 sm:px-3"

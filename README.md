@@ -1,64 +1,46 @@
-# Getting Started with Basic React Project Startup
+# Travel-Booking-related-website-mehedisarkar2k
 
-## This template will install instantly
+## Hello welcome to [Travel Vila](https://travel-vila.web.app/).
 
-- Facebook react project
-- Tailwind css
-- React-router-dom
-- React-icons
+## Table of Contents
 
-## To run this project
+- [Live Server](#live-server)
+- [How to run](#how-to-run)
+- [About Project](#about-project)
 
-1. Clone the repository
+## Live Server
 
-```sh
-git clone git@github.com:mehedisarkar2k/react-startup.git
-```
+https://travel-vila.web.app/
 
-or
+## How to run
 
-```sh
-git clone https://github.com/mehedisarkar2k/react-startup.git
-```
+1. Clone this repository
+   ```sh
+   git clone https://github.com/programming-hero-web-course1/tourism-or-delivery-website-client-side-mehedisarkar2k
+   ```
+2. Run
+   ```sh
+   yarn
+   ```
+3. Then run to see project in live server
+   ```sh
+   yarn start
+   ```
+4. This app should be available in http://localhost:3000/
 
-2. To install the project
+## About Project
 
-- go to the folder
+> - I've used react to develop the UI of this site.
+> - This is a Travel Booking website mainly focused on Cruises travel.
+> - This app contains different information for the for the Travel <em><strong>Immune and Inspired</strong></em>.
+> - I have used font-awesome for icons. And also used tailwind for responsiveness and design.
+> - I have used react-router-dom to make this single page website.
+> - Host all the data in the MongoDB and images are on tme ImgBB.
 
-```sh
-cd react-startup
-```
+#### Special Features
 
-- Install the packages
-
-```sh
-yarn
-```
-
-or
-
-```sh
-yarn install
-```
-
-or
-
-```sh
-npm install
-```
-
-3. Run the project in your local server
-
-```sh
-yarn start
-```
-
-or
-
-```sh
-npm run start
-```
-
-### Hopefully you will see your project in
-
-http://localhost:3000/ or http://localhost:3001/
+> - You can book any cruise travel packages.
+> - You can review your booked items.
+> - In the my orders page, you can cancel them.
+> - In the admin page you can delete order and approved a booked item. this also be updated on UI.
+> - Also, you can add a new package, this also be update on UI

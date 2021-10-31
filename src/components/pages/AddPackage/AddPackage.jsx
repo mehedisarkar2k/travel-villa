@@ -9,7 +9,6 @@ const AddPackage = () => {
   const history = useHistory();
 
   const onSubmit = (data) => {
-    console.log(data);
     fetch("https://peaceful-plateau-88614.herokuapp.com/addPackage", {
       method: "POST",
       headers: {
@@ -31,7 +30,6 @@ const AddPackage = () => {
             }
           });
         }
-        // console.log(data);
       });
   };
 

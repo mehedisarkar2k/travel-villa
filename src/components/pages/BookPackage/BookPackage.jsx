@@ -53,7 +53,6 @@ const BookPackage = () => {
         } else {
           Swal.fire("Product already booked by other user or you!");
         }
-        console.log(data);
       })
       .catch((err) => {
         console.log(err.message);

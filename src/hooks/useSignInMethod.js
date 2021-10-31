@@ -1,4 +1,5 @@
 import { useHistory, useLocation } from "react-router-dom";
+import Swal from "sweetalert2";
 import useFirebase from "./useFirebase";
 
 const useSingInMethod = () => {
@@ -10,7 +11,8 @@ const useSingInMethod = () => {
   const handleGoogleSignIn = () => {
     setIsLoading(true);
     googleSignIn()
-      .then(() => {
+      .then((result) => {
+        Swal.fire("Sign In successfully", result.user.email);
         history.push(redirect_uri);
       })
       .catch((error) => {

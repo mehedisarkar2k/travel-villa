@@ -3,7 +3,7 @@ import { MdOutlineFlight } from "react-icons/md";
 
 const Title = ({ title }) => {
   return (
-    <h2 className="text-4xl text-orange font-bold">
+    <h2 className="text-3xl md:text-4xl text-orange font-bold">
       {title}
       <div className="flex items-center">
         <MdOutlineFlight className="transform rotate-90" />

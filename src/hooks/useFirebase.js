@@ -6,6 +6,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import initializeFirebase from "../firebase/firebase.init";
 
 initializeFirebase();
@@ -25,7 +26,7 @@ const useFirebase = () => {
     setIsLoading(true);
     signOut(auth)
       .then(() => {
-        console.log("user sign out successfully");
+        Swal.fire("Sign out successfully");
       })
       .then(() => setIsLoading(true));
   };

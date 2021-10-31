@@ -8,30 +8,32 @@ import BannerStyle from "./Banner.module.css";
 const Banner = () => {
   return (
     <div className={BannerStyle.banner}>
-      <div className="">
-        <h1 className="text-4xl md:text-6xl text-white font-bold text-center">
+      <div className="flex flex-col items-center justify-center">
+        <h1 className="text-3xl md:text-6xl text-white font-bold text-center">
           Finest Luxury <span className="text-lightBlue">Cruise</span> in
           Moritz!
         </h1>
 
-        <div className="mt-6 ml-10 md:ml-20 space-y-1 md:space-y-2">
+        <div className="mt-6 ml-10 md:ml-20 space-y-1 md:space-y-2 text-lg md:text-2xl">
           <div className="flex items-center justify-start text-white space-x-5">
-            <RiShipFill className="text-2xl text-orange" />
-            <p className="text-lg font-medium">Over 100 Cruises Spot</p>
+            <RiShipFill className="text-orange" />
+            <p className="text-base md:text-lg font-medium">
+              Over 100 Cruises Spot
+            </p>
           </div>
 
           <div className="flex items-center justify-start text-white space-x-5">
-            <GoLocation className="text-2xl text-orange" />
-            <p className="text-lg font-medium">Over 1000 Places</p>
+            <GoLocation className="text-orange" />
+            <p className="text-base md:text-lg font-medium">Over 1000 Places</p>
           </div>
 
           <div className="flex items-center justify-start text-white space-x-5">
-            <BsLaptop className="text-2xl text-orange" />
-            <p className="text-lg font-medium">Easy Booking</p>
+            <BsLaptop className="text-orange" />
+            <p className="text-base md:text-lg font-medium">Easy Booking</p>
           </div>
           <div className="flex items-center justify-start text-white space-x-5">
-            <BiDollar className="text-2xl text-orange" />
-            <p className="text-lg font-medium">Best Prices</p>
+            <BiDollar className="text-orange" />
+            <p className="text-base md:text-lg font-medium">Best Prices</p>
           </div>
           <div className="flex items-center justify-start text-white space-x-5">
             <BsHeadset className="text-2xl text-orange" />
@@ -39,7 +41,7 @@ const Banner = () => {
           </div>
         </div>
 
-        <button className="bg-orange text-white px-6 py-2 mt-4">
+        <button className="bg-orange text-white px-8 py-3 mt-4 rounded-lg">
           <BsPerson className="inline-block" /> About Us
         </button>
       </div>

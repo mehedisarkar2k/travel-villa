@@ -28,7 +28,7 @@ const AboutUS = () => {
           <div className="rounded-2xl overflow-hidden shadow-2xl">
             <img
               className="transition transform hover:scale-110 rounded-2xl w-full h-full"
-              src="https://i.ibb.co/9pb4wp3/contact-Img.jpg"
+              src="https://i.ibb.co/gjLBbT6/aboutUs.jpg"
               alt=""
             />
           </div>
@@ -54,30 +54,37 @@ const AboutUS = () => {
         <div className="my-20 mx-auto flex justify-center items-center w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 w-full gap-8">
             <div className="text-4xl flex flex-col items-center justify-center space-y-2 bg-gray-50 shadow-lg hover:shadow-xl transition p-6 rounded-lg">
-              <BsEmojiSmile className="text-gray-400" />
+              <BsEmojiSmile className="text-orange" />
               <p className="text-gray-800 m-0">70,000</p>
-              <p className="text-lightBlue text-sm">Happy Customer</p>
+              <p className="text-darkBlue font-medium text-lg tracking-wide">
+                Happy Customer
+              </p>
             </div>
             <div className="text-4xl flex flex-col items-center justify-center space-y-2 bg-gray-50 shadow-lg hover:shadow-xl transition p-6 rounded-lg">
-              <BiBus className="text-gray-400" />
+              <BiBus className="text-orange" />
               <p className="text-gray-800 m-0">122</p>
-              <p className="text-lightBlue text-sm">Amazing Tours</p>
+              <p className="text-darkBlue font-medium text-lg tracking-wide">
+                Amazing Tours
+              </p>
             </div>
             <div className="text-4xl flex flex-col items-center justify-center space-y-2 bg-gray-50 shadow-lg hover:shadow-xl transition p-6 rounded-lg">
-              <CgToolbox className="text-gray-400" />
+              <CgToolbox className="text-orange" />
               <p className="text-gray-800 m-0">8,187</p>
-              <p className="text-lightBlue text-sm">In Business</p>
+              <p className="text-darkBlue font-medium text-lg tracking-wide">
+                In Business
+              </p>
             </div>
             <div className="text-4xl flex flex-col items-center justify-center space-y-2 bg-gray-50 shadow-lg hover:shadow-xl transition p-6 rounded-lg">
-              <BsChat className="text-gray-400" />
+              <BsChat className="text-orange" />
               <p className="text-gray-800 m-0">12,865</p>
-              <p className="text-lightBlue text-sm">Support Cases</p>
+              <p className="text-darkBlue font-medium text-lg tracking-wide">
+                Support Cases
+              </p>
             </div>
           </div>
         </div>
-
-        <ContactUs />
       </div>
+      <ContactUs />
     </div>
   );
 };

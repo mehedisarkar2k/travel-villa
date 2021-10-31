@@ -9,7 +9,7 @@ const Hotels = () => {
     fetch("https://peaceful-plateau-88614.herokuapp.com/hotels")
       .then((res) => res.json())
       .then((data) => setHotels(data));
-  });
+  }, []);
 
   return (
     <div>
