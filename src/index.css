@@ -38,6 +38,9 @@
   .my-container {
     max-width: 1170px !important;
   }
+  .userImg {
+    display: block;
+  }
 }
 @media (min-width: 1400px) {
   .my-container {

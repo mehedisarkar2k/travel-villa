@@ -19,7 +19,7 @@ function Nav() {
                 </h2>
               </div>
               <div className="ml-auto hidden lg:block">
-                <div className="ml-10 flex items-center space-x-4">
+                <div className="ml-10 flex items-center space-x-2">
                   <NavLink
                     activeClassName="text-lightBlue bg-gray-700"
                     to="/home"
@@ -85,13 +85,13 @@ function Nav() {
                       <img
                         src={user.photoURL}
                         alt=""
-                        className="h-10 w-10 rounded-full"
+                        className="userImg hidden h-10 w-10 rounded-full"
                       />
                       <button
                         onClick={userSignOut}
                         className="bg-orange nav-link ml-2"
                       >
-                        Logout
+                        Logout ({user.displayName.split(" ")[0]})
                       </button>
                     </div>
                   ) : (
@@ -223,7 +223,7 @@ function Nav() {
                       onClick={userSignOut}
                       className="bg-orange nav-link"
                     >
-                      Logout
+                      Logout ({user.displayName.split(" ")[0]})
                     </button>
                   </div>
                 ) : (
