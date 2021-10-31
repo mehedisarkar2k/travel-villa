@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useData from "../../../hooks/useData";
 import Spinner from "../../shared/Spinner/Spinner";
 import Title from "../../shared/Title/Title";
@@ -7,6 +7,10 @@ import Cruise from "./Cruise/Cruise";
 
 const Cruises = () => {
   const { cruises } = useData();
+
+  useEffect(() => {
+    document.title = "All Package : Travel Vila";
+  }, []);
 
   if (cruises.length < 1) {
     return <Spinner />;

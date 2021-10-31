@@ -14,6 +14,8 @@ const MyOrders = () => {
   const { cancelOrder, updateUI } = useMethods();
 
   useEffect(() => {
+    document.title = "My Orders : Travel Vila";
+
     fetch(
       `https://peaceful-plateau-88614.herokuapp.com/myOrders?email=${user?.email}`
     )

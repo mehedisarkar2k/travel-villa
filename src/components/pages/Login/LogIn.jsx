@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import useSingInMethod from "../../../hooks/useSignInMethod";
 // import Logo from "../../img/logo.png";
 
 const Login = () => {
+  useEffect(() => {
+    document.title = "Login : Travel Vila";
+  }, []);
+
   const { handleGoogleSignIn } = useSingInMethod();
   return (
     <div

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BiBus } from "react-icons/bi";
 import { BsChat, BsEmojiSmile } from "react-icons/bs";
 import { CgToolbox } from "react-icons/cg";
@@ -6,6 +6,10 @@ import ContactUs from "../../shared/ContactUs/ContactUs";
 import Title from "../../shared/Title/Title";
 
 const AboutUS = () => {
+  useEffect(() => {
+    document.title = "About Us : Travel Vila";
+  }, []);
+
   return (
     <div className="bg-blue-50">
       <div

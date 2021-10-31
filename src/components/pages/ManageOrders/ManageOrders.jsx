@@ -14,6 +14,8 @@ const ManageOrders = () => {
   const { cancelOrder, updateUI, updateOrder } = useMethods();
 
   useEffect(() => {
+    document.title = "Manage Orders : Travel Vila";
+
     fetch(`https://peaceful-plateau-88614.herokuapp.com/manageOrders`)
       .then((res) => res.json())
       .then((data) => setAllMyOrders(data));

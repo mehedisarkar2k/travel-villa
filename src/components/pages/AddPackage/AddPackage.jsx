@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
 import Swal from "sweetalert2";
@@ -7,6 +7,10 @@ import Title from "../../shared/Title/Title";
 const AddPackage = () => {
   const { register, handleSubmit } = useForm();
   const history = useHistory();
+
+  useEffect(() => {
+    document.title = "Add Package : Travel Vila";
+  }, []);
 
   const onSubmit = (data) => {
     fetch("https://peaceful-plateau-88614.herokuapp.com/addPackage", {

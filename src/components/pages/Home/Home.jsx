@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useData from "../../../hooks/useData";
 import ContactUs from "../../shared/ContactUs/ContactUs";
 import Spinner from "../../shared/Spinner/Spinner";
@@ -12,6 +12,10 @@ import WhyChoose from "./WhyChoose/WhyChoose";
 
 const Home = () => {
   const { cruises } = useData();
+
+  useEffect(() => {
+    document.title = "Home : Travel Vila";
+  }, []);
 
   if (cruises.length < 1) {
     return <Spinner />;
