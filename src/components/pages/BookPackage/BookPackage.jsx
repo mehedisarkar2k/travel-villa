@@ -25,6 +25,7 @@ const BookPackage = () => {
     newData.email = data.email;
     newData.address = data.address;
     newData.status = "pending";
+    delete newData._id;
 
     fetch("https://peaceful-plateau-88614.herokuapp.com/addOrder", {
       method: "POST",
